@@ -1,0 +1,34 @@
+<!--An AngularJS module defines an application.
+The module is a container for the different parts of an application.
+The module is a container for the application controllers.
+Controllers always belong to a module.
+
+The "myApp" parameter refers to an HTML element in which the application will run.
+Add a controller to your application, and refer to the controller with the ng-controller directive:
+AngularJS has a set of built-in directives which you can use to add functionality to your application.-->
+<!--end description-->
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<body>
+
+    <div ng-app="myApp" >
+        <div ng-controller="myCtrl">
+            {{ firstName + " " + lastName }}
+        </div>
+        <p>{{ firstName + " " + lastName }}</p><!--firstName and lastName has not value, because it is only initialized through 'myCtrl' controller-->
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);//
+        app.controller("myCtrl", function ($scope) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+        });
+
+    </script>
+
+</body>
+
+</html>
